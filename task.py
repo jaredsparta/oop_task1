@@ -8,15 +8,19 @@ class FizzBuzz:
     # This prints the FIZZ, BUZZ and FIZZBUZZ as required
     # Checks using modulo for divisibility
     def play(self):
-        for number in range(1, self.final_number + 1):
-            if number % 3 == 0 and number % 5 == 0:
-                print("FIZZBUZZ")
-            elif number % 3 == 0:
-                print("FIZZ")
-            elif number % 5 == 0:
-                print ("BUZZ")
+        for num in range(1, self.final_number + 1):
+            val = ''
+            if num % 3 == 0:
+                val += "FIZZ"
+
+            if num % 5 == 0:
+                val += "BUZZ"
+
+            if not val:
+                print(num)
+                
             else:
-                print(number)
+                print(val)
 
 
 FizzBuzz(100)

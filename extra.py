@@ -12,15 +12,17 @@ class FB:
     # I store the values in a list
     def play(self):
         list = []
-        for number in range(1, self.final_number + 1):
-            if number % self.fizz == 0 and number % self.buzz == 0:
-                list.append("FIZZBUZZ")
-            elif number % self.fizz == 0:
-                list.append("FIZZ")
-            elif number % self.buzz == 0:
-                list.append("BUZZ")
+        for num in range(1, self.final_number + 1):
+            val = ''
+            if num % 3 == 0:
+                val += "FIZZ"
+            if num % 5 == 0:
+                val += "BUZZ"
+            if not val:
+                list.append(num)
             else:
-                list.append(number)
+                list.append(val)
+                
         return list
 
     # This is more user-friendly as you can see all values without scrolling
